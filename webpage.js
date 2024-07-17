@@ -1,45 +1,22 @@
-var layout = {
-  title: {
-    text:'Plot Title',
-    font: {
-      family: 'Courier New, monospace',
-      size: 24
-    },
-    xref: 'paper',
-    x: 0.05,
-  },
-  paper_bgcolor: "orange",
-  xaxis: {
-    title: {
-      text: 'x Axis Line',
-      font: {
-        family: 'Courier New, monospace',
-        size: 18,
-        color: '#7f7f7f'
-      }
-    },
-  },
-  yaxis: {
-    title: {
-      text: 'y Axis Line',
-      font: {
-        family: 'Courier New, monospace',
-        size: 18,
-        color: '#7f7f7f'
-      }
-    }
-  }
-};
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    const navLi = document.querySelectorAll('nav ul li a');
 
-TESTER = document.getElementById("tester");
-Plotly.newPlot(
-  TESTER,
-  [
-    {
-      x: ['red', 'green', 'orange', 'yellow', 'purple'],
-      y: [1, 2, 4, 8, 16],
-    type: 'bar'
-    }
-  ],
-  layout
-);
+    window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 60) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLi.forEach(li => {
+            li.classList.remove('active');
+            if (li.getAttribute('href').includes(current)) {
+                li.classList.add('active');
+            }
+        });
+    });
+});
