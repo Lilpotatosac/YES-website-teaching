@@ -3,62 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Project</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="webpage.js" defer></script>
+    <title>My Simple Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            padding: 14px 20px;
+            display: block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Research Project Title</h1>
-            <nav>
-                <ul>
-                    <li><a href="#introduction">Introduction</a></li>
-                    <li><a href="#methodology">Methodology</a></li>
-                    <li><a href="#results">Results</a></li>
-                    <li><a href="#discussion">Discussion</a></li>
-                    <li><a href="#conclusion">Conclusion</a></li>
-                    <li><a href="#references">References</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Welcome to My Simple Website</h1>
     </header>
-    <div class="container">
-        <aside>
-            <h2>Sidebar</h2>
-            <p>Quick links or additional information can go here.</p>
-        </aside>
-        <main>
-            <section id="introduction">
-                <h2>Introduction</h2>
-                <p>This section introduces the research topic, the problem being addressed, and the significance of the study.</p>
-            </section>
-            <section id="methodology">
-                <h2>Methodology</h2>
-                <p>In this section, describe the methods used for data collection and analysis.</p>
-            </section>
-            <section id="results">
-                <h2>Results</h2>
-                <p>Present the research findings here.</p>
-            </section>
-            <section id="discussion">
-                <h2>Discussion</h2>
-                <p>Interpret the results and discuss their implications.</p>
-            </section>
-            <section id="conclusion">
-                <h2>Conclusion</h2>
-                <p>Summarize the main points of the research and suggest areas for future study.</p>
-            </section>
-            <section id="references">
-                <h2>References</h2>
-                <p>List all the sources cited in your research here.</p>
-            </section>
-        </main>
-    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <main>
+        <h2>Home</h2>
+        <p>This is the home page of my simple website.</p>
+        <section id="about">
+            <h2>About</h2>
+            <p>This section contains information about the website.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>This section contains contact information.</p>
+        </section>
+    </main>
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Research Project. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 My Simple Website</p>
     </footer>
 </body>
 </html>
