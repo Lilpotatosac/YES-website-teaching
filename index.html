@@ -3,15 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catch the Falling Items</title>
-    <link rel="stylesheet" href="webpage.css">
+    <title>Scientific Data Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #chart-container {
+            width: 80%;
+            margin: auto;
+        }
+        .description {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <div id="game-container">
-        <div id="character"></div>
-        <div id="item"></div>
+    <h1>Scientific Data Chart</h1>
+    <div id="chart-container">
+        <canvas id="myChart"></canvas>
     </div>
-    <script src="webpage.js"></script>
+    <div class="description">
+        <h2>Color Descriptions</h2>
+        <ul>
+            <li><span style="color: red;">Red:</span> Represents the highest values.</li>
+            <li><span style="color: orange;">Orange:</span> Represents high values.</li>
+            <li><span style="color: yellow;">Yellow:</span> Represents medium values.</li>
+            <li><span style="color: green;">Green:</span> Represents low values.</li>
+            <li><span style="color: blue;">Blue:</span> Represents the lowest values.</li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+                datasets: [{
+                    label: 'Value',
+                    data: [12, 19, 3, 5, 2],
+                    backgroundColor: [
+                        'red',
+                        'orange',
+                        'yellow',
+                        'green',
+                        'blue'
+                    ],
+                    borderColor: [
+                        'darkred',
+                        'darkorange',
+                        'gold',
+                        'darkgreen',
+                        'darkblue'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
 
